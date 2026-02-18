@@ -24,7 +24,9 @@ This service as of now doesn't support payment or security Features but we can u
 For Authentication we either use JWT token or user name and password login and integrate Azure Active directory for token generation or create a database in service for storing user credential.
 
 Briefly mention your technology choices, hosting approach, and delivery plan.
+
 I have used java to build basic service we can host it on cloud using azure/aws, we have currently used inmemory hashmap but we can use sql database and redis for caching, for deployment we can use kubernetes.
+
 Delivery plan:
 1. Create Basic Service
 2. Run on non-prod environment and test if passes,Rollout and keep health check dashboard ready to monitor the usage and how our service behaves.
