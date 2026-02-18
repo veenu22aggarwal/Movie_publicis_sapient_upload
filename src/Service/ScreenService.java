@@ -33,10 +33,6 @@ public class ScreenService {
             }
         }
         System.out.println("No Screen Available for " + movieName);
-        /*if(!screens.containsKey(id))
-            System.out.println(" Screen Not Found");
-        Screen screen = screens.get(id);
-        screen.setMovieForScreen(movieName);*/
     }
 
     public Screen getScreenForMovie(String movieName)
@@ -49,12 +45,13 @@ public class ScreenService {
     }
 
     public void DisplayAllShows(){
+        System.out.println("Displaying All Screens Available");
         for(Map.Entry<Integer,Screen> mp : screens.entrySet())
         {
             Screen screen = mp.getValue();
             if( screen.getMovieName() != null) {
                 String theaterName = theater.getTheater(screen.getTheaterId()).getName();
-                System.out.println(" On Screen " + screen.getName() + " movie is getting played "+ screen.getMovieName()+" in theater "+ theaterName);
+                System.out.println(screen.getMovieName()+ " Movie is getting played On Screen " + screen.getName() +" in theater "+ theaterName);
             }
         }
     }
