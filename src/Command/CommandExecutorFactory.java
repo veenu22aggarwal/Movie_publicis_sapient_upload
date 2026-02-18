@@ -18,23 +18,27 @@ public class CommandExecutorFactory {
         CommandExecutor commandExecutor = null;
         if (commandExecutorHashMap.containsKey(command.getName())) {
             commandExecutor = commandExecutorHashMap.get(command.getName());
-        } else if (command.getName().equals("Booking")) {
+        } else if (command.getName().equals(BookingCommandExecutor.name)) {
             commandExecutor = new BookingCommandExecutor(bookingService);
             commandExecutorHashMap.put(command.getName(), commandExecutor);
-        } else if (command.getName().equals("AddMovie")) {
+        } else if (command.getName().equals(AddMovieCommandExecutor.name)) {
             commandExecutor = new AddMovieCommandExecutor(movieService,screenService );
             commandExecutorHashMap.put(command.getName(), commandExecutor);
         }
-        else if(command.getName().equals("AddScreen")){
+        else if(command.getName().equals(AddScreenCommandExecutor.name)){
             commandExecutor = new AddScreenCommandExecutor(screenService);
             commandExecutorHashMap.put(command.getName(), commandExecutor);
         }
-        else if(command.getName().equals("AddTheater")){
+        else if(command.getName().equals(AddTheaterCommandExecutor.name)){
             commandExecutor = new AddTheaterCommandExecutor(theaterService);
             commandExecutorHashMap.put(command.getName(), commandExecutor);
         }
-        else if(command.getName().equals("SetScreenForMovie")){
+        else if(command.getName().equals(SetScreenForMovieCommandExecutor.name)){
             commandExecutor = new SetScreenForMovieCommandExecutor(screenService);
+            commandExecutorHashMap.put(command.getName(), commandExecutor);
+        }
+        else if(command.getName().equals(DisplayAllScreenCommandExecutor.name)) {
+            commandExecutor = new DisplayAllScreenCommandExecutor(screenService);
             commandExecutorHashMap.put(command.getName(), commandExecutor);
         }
         return commandExecutor;
